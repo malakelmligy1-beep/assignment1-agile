@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>📚 Library Management System</h1>
+
+<!-- Message Area (hidden, replaced by toast) -->
+<p id="message"></p>
+
+<div class="tabs">
+    <button id="tabLogin" onclick="showTab('login')">Login</button>
+    <button id="tabAdd" onclick="showTab('add')" disabled>Add</button>
+    <button id="tabView" onclick="showTab('view')" disabled>View</button>
+    <button id="tabSearch" onclick="showTab('search')" disabled>Search</button>
+    <button id="tabBorrow" onclick="showTab('borrow')" disabled>Borrow</button>
+    <button id="tabDelete" onclick="showTab('delete')" disabled>Delete</button>
+    <button id="tabStats" onclick="showTab('stats')" disabled>Stats</button>
+</div>
+
+<!-- Login -->
+<div id="login" class="tab">
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button id="loginBtn" onclick="login()">Login</button>
+</div>
+
+<!-- Add -->
+<div id="add" class="tab hidden">
+    <input type="text" id="title" placeholder="Book Title">
+    <input type="text" id="author" placeholder="Author">
+    <button id="addBookBtn" onclick="addBook()">Add Book</button>
+</div>
+
+<!-- View -->
+<div id="view" class="tab hidden">
+    <button id="refreshBtn" onclick="showBooks()">Refresh</button>
+    <pre id="display"></pre>
+</div>
+
+<!-- Search -->
+<div id="search" class="tab hidden">
+    <input type="text" id="searchTitle" placeholder="Search Title">
+    <button id="searchBtn" onclick="searchBook()">Search</button>
+</div>
+
+<!-- Borrow -->
+<div id="borrow" class="tab hidden">
+    <input type="text" id="borrowTitle" placeholder="Book Title">
+    <input type="number" id="days" placeholder="Days">
+    <button id="borrowBtn" onclick="borrowBook()">Borrow</button>
+    <button id="returnBtn" onclick="returnBook()">Return</button>
+</div>
+
+<!-- Delete -->
+<div id="delete" class="tab hidden">
+    <input type="text" id="deleteTitle" placeholder="Book Title">
+    <button id="deleteBtn" onclick="deleteBook()">Delete</button>
+</div>
+
+<!-- Stats -->
+<div id="stats" class="tab hidden">
+    <button id="statsBtn" onclick="countBooks()">Show Stats</button>
+    <button id="borrowedListBtn" onclick="listBorrowed()">Borrowed Books</button>
+</div>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
